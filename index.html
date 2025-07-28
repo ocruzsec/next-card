@@ -4,7 +4,7 @@
 <head>
     <title>Card &ndash; the better way to collect credit cards</title>
     <meta name="viewport" content="initial-scale=1">
-    <!-- CSS is included through the card.js script -->
+    <link rel="stylesheet" href="/dist/next-card.css" />
 </head>
 
 <body>
@@ -39,8 +39,7 @@
     </div>
 
     <script type="module">
-        import Card from '/src/card/index.js';
-
+        import Card from '/dist/next-card.es.js';
         new Card({
             form: document.querySelector('form'),
             container: '.card-wrapper'

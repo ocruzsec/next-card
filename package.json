@@ -1,19 +1,41 @@
 {
-  "name": "card",
-  "version": "2.5.4",
-  "author": "Clinpay S.A. de C.V.",
-  "description": "Card lets you add an interactive, CSS3 credit card animation to your credit card form to help your users through the process.",
-  "main": "lib/card.js",
+  "name": "next-card",
+  "version": "1.0.0",
+  "author": "Oscar Cruz <oscrug.developer@gmail.com>",
+  "description": "Next Card is a better way to collect credit card information — visually and interactively.",
+  "main": "dist/next-card.umd.js",
+  "module": "dist/next-card.es.js",
+  "style": "dist/next-card.css",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/next-card.es.js",
+      "require": "./dist/next-card.umd.js",
+      "style": "./dist/next-card.css"
+    }
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jessepollak/card"
+    "url": "https://github.com/ocruzsec/next-card"
   },
+  "keywords": [
+    "credit-card",
+    "form",
+    "card",
+    "interactive",
+    "payment",
+    "input",
+    "animation"
+  ],
   "contributors": [
     {
       "name": "Oscar Cruz",
       "email": "oscrug.developer@gmail.com"
     }
   ],
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

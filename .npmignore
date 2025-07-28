@@ -22,6 +22,7 @@
 *.gz
 *.orig
 *.jql.js
+*.test.js
 
 work
 build
@@ -35,6 +36,7 @@ coverage
 lib-cov
 html-report
 xunit.xml
+vite.config.js
 
 .project
 .idea

@@ -7,7 +7,7 @@ export default defineConfig({
       entry: path.resolve(__dirname, 'src/card/index.js'),
       name: 'card',
       formats: ['umd', 'es'],
-      fileName: (format) => `card.${format}.js`
+      fileName: (format) => `next-card.${format}.js`
     },
     outDir: 'dist',
     emptyOutDir: true,
