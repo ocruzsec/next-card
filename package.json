@@ -5,7 +5,7 @@
   "description": "Next Card is a better way to collect credit card information — visually and interactively.",
   "main": "dist/next-card.umd.js",
   "module": "dist/next-card.es.js",
-  "style": "dist/next-card.css",
+  "style": "./dist/next-card.css",
   "files": [
     "dist"
   ],
