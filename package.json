@@ -13,6 +13,9 @@
     ".": {
       "import": "./dist/next-card.es.js",
       "require": "./dist/next-card.umd.js"
+    },
+    "./dist/next-card.css": {
+      "default": "./dist/next-card.css"
     }
   },
   "repository": {
