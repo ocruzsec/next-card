@@ -1,0 +1,45 @@
+.jp-card.jp-card-ie-10, .jp-card.jp-card-ie-11 {
+  &.jp-card-flipped {
+    -webkit-transform: rotateY(0deg);
+        -ms-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+
+    .jp-card-front {
+      -webkit-transform: rotateY(0deg);
+          -ms-transform: rotateY(0deg);
+              transform: rotateY(0deg);
+    }
+
+    .jp-card-back {
+      -webkit-transform: rotateY(0deg);
+          -ms-transform: rotateY(0deg);
+              transform: rotateY(0deg);
+
+      &:after {
+        left: 18%;
+      }
+
+      .jp-card-cvc {
+        -webkit-transform: rotateY(180deg);
+            -ms-transform: rotateY(180deg);
+                transform: rotateY(180deg);
+        left: 5%;
+      }
+
+      .jp-card-shiny  {
+        left: 84%;
+        &:after {
+          left: -480%;
+          -webkit-transform: rotateY(180deg);
+              -ms-transform: rotateY(180deg);
+                  transform: rotateY(180deg);
+        }
+      }
+    }
+  }
+}
+
+.jp-card.jp-card-ie-10.jp-card-amex .jp-card-back,
+.jp-card.jp-card-ie-11.jp-card-amex .jp-card-back {
+  display: none;
+}

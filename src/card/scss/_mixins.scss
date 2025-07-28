@@ -1,0 +1,140 @@
+// IMPORT ONCE
+// We use this to prevent styles from being loaded multiple times for components that rely on other components.
+$modules: () !default;
+
+@mixin exports($name) {
+  $modules: $modules !global;
+  $module_index: index($modules, $name);
+
+  @if (($module_index == null) or ($module_index == false)) {
+    $modules: append($modules, $name) !global;
+    @content;
+  }
+}
+
+@mixin shape() {
+  content: " ";
+  display: block;
+}
+
+@mixin card-texture($radial-gradient: true) {
+  $b1: rgba(255, 255, 255, 0);
+  $b2: opacify($b1, 0.03);
+  $b3: opacify($b1, 0.04);
+  $b4: opacify($b1, 0.05);
+
+  @if $radial-gradient {
+    background-image:
+      repeating-linear-gradient(45deg,
+        $b1 1px, $b2 2px,
+        $b3 3px, $b4 4px
+      ),
+      repeating-linear-gradient(135deg,
+        $b4 1px, $b1 2px,
+        $b3 3px, $b2 4px
+      ),
+      repeating-linear-gradient(90deg,
+        $b1 1px, $b2 2px,
+        $b3 3px, $b4 4px
+      ),
+      repeating-linear-gradient(210deg,
+        $b1 1px, $b2 2px,
+        $b3 3px, $b4 4px
+      ),
+      repeating-radial-gradient(circle at 30% 30%,
+        $b1 1px, $b2 2px,
+        $b3 3px, $b4 4px
+      ),
+      repeating-radial-gradient(circle at 70% 70%,
+        $b1 1px, $b2 2px,
+        $b3 3px, $b4 4px
+      ),
+      repeating-radial-gradient(circle at 90% 20%,
+        $b1 1px, $b2 2px,
+        $b3 3px, $b4 4px
+      ),
+      repeating-radial-gradient(circle at 15% 80%,
+        $b1 1px, $b2 2px,
+        $b3 3px, $b4 4px
+      ),
+      linear-gradient(-25deg, $b1 50%, opacify($b1, 0.2) 70%, $b1 90%);
+  } @else {
+    background-image:
+      repeating-linear-gradient(45deg,
+        $b1 1px, $b2 2px,
+        $b3 3px, $b4 4px
+      ),
+      repeating-linear-gradient(135deg,
+        $b4 1px, $b1 2px,
+        $b3 3px, $b2 4px
+      ),
+      repeating-linear-gradient(90deg,
+        $b1 1px, $b2 2px,
+        $b3 3px, $b4 4px
+      ),
+      repeating-linear-gradient(210deg,
+        $b1 1px, $b2 2px,
+        $b3 3px, $b4 4px
+      ),
+      linear-gradient(-25deg, $b1 50%, opacify($b1, 0.2) 70%, $b1 90%);
+  }
+}
+
+@mixin transform($value) {
+  -webkit-transform: $value;
+      -ms-transform: $value;
+          transform: $value;
+}
+
+@mixin background-image($value) {
+  background-image: -webkit-#{$value};
+  background-image: #{$value};
+}
+
+@mixin radial-gradient($start-color, $end-color) {
+  background-image: -webkit-radial-gradient(circle, $start-color, $end-color);
+  background-image: radial-gradient(circle, $start-color, $end-color);
+}
+
+@mixin transition($transition...) {
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -ms-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
+
+@mixin linear-gradient($args...) {
+  background-image: -webkit-linear-gradient($args...);
+  background-image: -moz-linear-gradient($args...);
+  background-image: -o-linear-gradient($args...);
+  background-image: linear-gradient($args...);
+}
+
+@mixin perspective($value) {
+  -webkit-perspective: $value;
+     -moz-perspective: $value;
+      -ms-perspective: $value;
+          perspective: $value;
+}
+
+@mixin transform-style($value) {
+  -webkit-transform-style: $value;
+     -moz-transform-style: $value;
+      -ms-transform-style: $value;
+          transform-style: $value;
+}
+
+@mixin backface-visibility($value) {
+  -webkit-backface-visibility: $value;
+     -moz-backface-visibility: $value;
+      -ms-backface-visibility: $value;
+          backface-visibility: $value;
+}
+
+@mixin transition-delay($value) {
+  -webkit-transition-delay: $value;
+     -moz-transition-delay: $value;
+      -ms-transition-delay: $value;
+          transition-delay: $value;
+}
