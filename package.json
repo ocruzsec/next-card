@@ -1,6 +1,6 @@
 {
   "name": "next-card",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Oscar Cruz <oscrug.developer@gmail.com>",
   "description": "Next Card is a better way to collect credit card information — visually and interactively.",
   "main": "dist/next-card.umd.js",
@@ -12,8 +12,7 @@
   "exports": {
     ".": {
       "import": "./dist/next-card.es.js",
-      "require": "./dist/next-card.umd.js",
-      "style": "./dist/next-card.css"
+      "require": "./dist/next-card.umd.js"
     }
   },
   "repository": {

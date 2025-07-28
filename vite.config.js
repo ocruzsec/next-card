@@ -5,8 +5,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/card/index.js'),
-      name: 'card',
-      formats: ['umd', 'es'],
+      name: 'NextCard',
+      formats: ['es', 'umd'],
       fileName: (format) => `next-card.${format}.js`
     },
     outDir: 'dist',
