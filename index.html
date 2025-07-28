@@ -38,9 +38,10 @@
         </div>
     </div>
 
-    <script src="http://localhost:8080/card.js"></script>
-    <script>
-        var c = new Card({
+    <script type="module">
+        import Card from '/src/card/index.js';
+
+        new Card({
             form: document.querySelector('form'),
             container: '.card-wrapper'
         });
