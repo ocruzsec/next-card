@@ -55,7 +55,7 @@ yarn add next-card
 
 ```js
 import Card from 'next-card'
-import 'next-card/card/dist/card.css' // or your custom theme
+import 'next-card/dist/card.css'
 
 const form = document.querySelector('#payment-form');
 const container = document.querySelector('#card-container');
@@ -63,6 +63,62 @@ const container = document.querySelector('#card-container');
 if (form && container) {
   new Card({ form, container });
 }
+```
+
+### Vue
+
+For use with VueJs, install next-card.js from npm:
+
+```bash
+npm install next-card --save
+
+```
+Add in your component an Div with class 'card-wrapper', just pass in a selector that selects the fields in the correct order. Import the component next-card.js and add the object in instance mounted like this example:
+```html
+<template>
+  <div>
+    <div class="card-wrapper" ref="cardWrapper"></div>
+
+    <form ref="form" id="cc-form">
+      <input type="text" name="number" id="cc-number" />
+      <input type="text" name="full-name" id="cc-fullname" />
+      <input type="text" name="expiry" id="cc-expiration" />
+      <input type="text" name="cvc" id="cc-cvv" />
+    </form>
+  </div>
+</template>
+
+<script setup>
+import { onMounted, ref } from 'vue';
+import Card from 'next-card';
+import 'next-card/dist/next-card.css';
+
+const form = ref(null);
+const cardWrapper = ref(null);
+
+onMounted(() => {
+  if (form.value && cardWrapper.value) {
+    new Card({
+      form: form.value,
+      container: cardWrapper.value,
+      formSelectors: {
+        numberInput: "input#cc-number",
+        expiryInput: "input#cc-expiration",
+        cvcInput: "input#cc-cvv",
+        nameInput: "input#cc-fullname"
+      },
+      width: 270,
+      formatting: true,
+      placeholders: {
+        number: "•••• •••• •••• ••••",
+        name: "Full name",
+        expiry: "••/••",
+        cvc: "•••"
+      }
+    });
+  }
+});
+</script>
 ```
 
 ---
